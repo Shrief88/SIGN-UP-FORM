@@ -26,42 +26,42 @@
             </div>
          </div>
          <div class="form">
-            <form action="">
+            <form action="" id="myForm">
                <p>Lets do this!</p>
                <div class="form-row">
                   <div class="form-column">
-                     <label for="firstName">FIRST NAME</label>
-                     <input type="text" id="firstName" name="firstName">
+                     <label for="firstName">*FIRST NAME</label>
+                     <input type="text" id="firstName" name="firstName"  minlength="3" required>
                   </div>
                   <div class="form-column">
-                     <label for="LastName">LAST NAME</label>
-                     <input type="text" id="LastName" name="LastName">
-                  </div>
-               </div>
-               <div class="form-row">
-                  <div class="form-column">
-                     <label for="email">EMAIL</label>
-                     <input type="email" id="email" name="email">
-                  </div>
-                  <div class="form-column">
-                     <label for="phone">PHONE NUMBER</label>
-                     <input type="tel" id="phone" name="phone">     
+                     <label for="LastName">*LAST NAME</label>
+                     <input type="text" id="LastName" name="LastName" minlength="3" required>
                   </div>
                </div>
                <div class="form-row">
                   <div class="form-column">
-                     <label for="user_password">PASSWORD</label>
-                     <input type="password" id="user_password" name="password" class="error">
+                     <label for="email">*EMAIL</label>
+                     <input type="email" id="email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
                   </div>
                   <div class="form-column">
-                     <label for="confirm_password">CONFIRM PASSWORD</label>
-                     <input type="password" id="confirm_password" name="confirm_password" class="error">
+                     <label for="phone">*PHONE NUMBER</label>
+                     <input type="tel" id="phone" name="phone" pattern="^01[0-2,5]{1}[0-9]{8}$" required>     
+                  </div>
+               </div>
+               <div class="form-row">
+                  <div class="form-column">
+                     <label for="user_password">*PASSWORD</label>
+                     <input type="password" id="user_password" name="password" class="error" minlength="8" required>
+                  </div>
+                  <div class="form-column">
+                     <label for="confirm_password">*CONFIRM PASSWORD</label>
+                     <input type="password" id="confirm_password" name="confirm_password" class="error" minlength="8" required>
                   </div>
                </div>
             </form>
          </div>
          <div class="finish">
-            <button>Create Account</button>
+            <button type="submit" form="myForm">Create Account</button>
             <p>Already have an account? <span>Log in</span></p>
          </div>
       </div>

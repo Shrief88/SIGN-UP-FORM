@@ -53,7 +53,6 @@ p,body{
 }
 
 .right-container > div{
-   height: 200px;
    flex:1;
 }
 
@@ -138,6 +137,13 @@ form{
 
 .finish span{
    color: #596D48;
+}
+
+.finish button:hover{
+   background-color: transparent;
+   color: black
+    
+  
 }
 
 
