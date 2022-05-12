@@ -5,6 +5,7 @@
 
 :root{
    font-size: 18px;
+   box-sizing: border-box;
 }
 
 
@@ -48,17 +49,22 @@ p,body{
    display: flex;
    flex-direction: column;
    background-color: #F9FAFB;
+   gap : 40px
 }
 
 .right-container > div{
    height: 200px;
-   flex-grow: 1;
+   flex:1;
 }
 
 .intro{
    font-weight: bold;
    font-size: 1.3rem;
-   padding: 20px;
+   padding-left: 40px;  
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   justify-content: flex-end;
 }
 
 
@@ -109,6 +115,31 @@ form{
    border-radius: 3px;
    height: 30px; 
 }
+
+.finish{
+   padding-left: 40px;
+}
+
+.finish button{
+   padding: 15px 40px;
+   border-radius: 10px;
+   font-size: 1.2rem;
+   background-color: #596D48;
+   color: white;
+   border: solid;
+   border-color: rgba(99, 99, 99, 0.8);
+   box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px;
+   margin-bottom: 30px;
+}
+
+.finish p{
+   font-size: 1.2rem;
+}
+
+.finish span{
+   color: #596D48;
+}
+
 
 
 
