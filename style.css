@@ -8,7 +8,7 @@
 }
 
 
-p ,body{
+p,body{
    margin: 0;
    padding: 0;
 }
@@ -64,24 +64,25 @@ p ,body{
 
 .form{
    background-color: white;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   padding: 20px 40px;
+}
+
+.form p{
+   font-weight: 700;
+   font-size: 2rem;
 }
 
 form{
    display: flex;
    flex-direction: column;
    gap: 20px;
-   padding: 20px 40px;
+  
 }
 
 .form-row{
    display: flex;
    gap: 50px;
-}
-
-.form-row input{
-   border: 1px solid #E5E7EB;
-   border-radius: 3px;
-   height: 30px; 
 }
 
 .form-column{
@@ -90,6 +91,25 @@ form{
    flex: 1;
    gap: 5px;
 }
+
+.form-column input:not(.error){
+   border: 1px solid #E5E7EB;
+   border-radius: 3px;
+   height: 30px; 
+}
+
+.form-column input:focus{
+   border-color: blue;
+   outline: none;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.error{
+   border: 1px solid red;
+   border-radius: 3px;
+   height: 30px; 
+}
+
 
 
 
