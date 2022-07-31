@@ -6,6 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Sign UP</title>
    <link rel="stylesheet" href="style.css">
+   <script src="main.js" defer></script>
 </head>
 <body>
    <div class="container">
@@ -31,31 +32,49 @@
                <div class="form-row">
                   <div class="form-column">
                      <label for="firstName">*FIRST NAME</label>
-                     <input type="text" id="firstName" name="firstName"  minlength="3" required>
+                     <input type="text" id="firstName" name="firstName" class="error">
+                     <small></small>
                   </div>
                   <div class="form-column">
                      <label for="LastName">*LAST NAME</label>
-                     <input type="text" id="LastName" name="LastName" minlength="3" required>
+                     <input type="text" id="LastName" name="LastName">
+                     <small></small>
                   </div>
                </div>
                <div class="form-row">
                   <div class="form-column">
                      <label for="email">*EMAIL</label>
-                     <input type="email" id="email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+                     <input type="text" id="email" name="email">
+                     <small></small>
                   </div>
                   <div class="form-column">
                      <label for="phone">*PHONE NUMBER</label>
-                     <input type="tel" id="phone" name="phone" pattern="^01[0-2,5]{1}[0-9]{8}$" required>     
+                     <input type="tel" id="phone" name="phone"> 
+                     <small></small>    
+                  </div>
+               </div>
+               <div class="form-row">
+                  <div class="form-column">
+                     <label for="country">*COUNTRY</label>
+                     <input type="text" id="country" name="country">
+                     <small></small>
+                  </div>
+                  <div class="form-column">
+                     <label for="zipCode">*ZIP CODE</label>
+                     <input type="text" id="zipCode" name="zipCode">
+                     <small></small>
                   </div>
                </div>
                <div class="form-row">
                   <div class="form-column">
                      <label for="user_password">*PASSWORD</label>
-                     <input type="password" id="user_password" name="password" class="error" minlength="8" required>
+                     <input type="password" id="user_password" name="password">
+                     <small></small>
                   </div>
                   <div class="form-column">
                      <label for="confirm_password">*CONFIRM PASSWORD</label>
-                     <input type="password" id="confirm_password" name="confirm_password" class="error" minlength="8" required>
+                     <input type="password" id="confirm_password" name="confirm_password">
+                     <small></small>
                   </div>
                </div>
             </form>

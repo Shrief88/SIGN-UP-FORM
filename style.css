@@ -103,17 +103,32 @@ form{
    height: 30px; 
 }
 
-.form-column input:focus{
+/* .form-column input:focus{
    border-color: blue;
    outline: none;
+  
+} */
+
+.error,.success{
+   border-radius: 3px;
+   height: 30px; 
    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   outline-width: 0;
 }
 
 .error{
    border: 1px solid red;
-   border-radius: 3px;
-   height: 30px; 
 }
+
+.success{
+   border: 1px solid green;
+}
+
+/* input:invalid{
+   border-color: #900;
+   background-color: #FDD;
+} */
+
 
 .finish{
    padding-left: 40px;
@@ -123,10 +138,9 @@ form{
    padding: 15px 40px;
    border-radius: 10px;
    font-size: 1.2rem;
-   background-color: #596D48;
-   color: white;
-   border: solid;
-   border-color: rgba(99, 99, 99, 0.8);
+   background-color: #f5f5ff;
+   color: black;
+   border: none;
    box-shadow: rgba(99, 99, 99, 0.8) 0px 2px 8px 0px;
    margin-bottom: 30px;
 }
@@ -140,10 +154,8 @@ form{
 }
 
 .finish button:hover{
-   background-color: transparent;
-   color: black
-    
-  
+   background-color: green;
+   color: white;
 }
 
 
