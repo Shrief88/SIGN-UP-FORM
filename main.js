@@ -19,7 +19,7 @@ const isZipCodeValid = (value)=>{
 }
 
 const isPasswordSecure = (value) => {
-    // passwoed must contains at least one: lowercase character, uppercase character, number,and  special character, The password must be eight characters or longer.
+    // password must contains at least one: lowercase character, uppercase character, number,and  special character, The password must be eight characters or longer.
     const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
     return passwordRegExp.test(value);
 }
@@ -80,10 +80,24 @@ const checkPhone = (input,value)=>{
     return valid;
 }
 
+const checkCountry = (input,value)=>{
+    let valid = false;
+    if(!isRequired(value)){
+        showError("You Must Provide a Country",input);
+    }
+    else if(!isLengthValid(value,2,60)){
+        showError("Length of the name must be between 2 and 60",input);
+    }else{
+        valid = true;
+        showSuccess(input);
+    } 
+    return valid;
+}
+
 const checkZipCode = (input,value)=>{
     let valid = false;
     if(!isRequired(value)){
-        return showError("You Must Provide a zipCode",input);
+        return showError("You Must Provide a zip Code",input);
     }
     else if(!isZipCodeValid(value)){
         showError("Please enter a zip code, xxxxx",input);
@@ -99,7 +113,7 @@ const checkPassword = (input,value)=>{
     if(!isRequired(value)){
         return showError("You Must Provide a password",input);
     }
-    if(!isPasswordSecure(valid)){
+    if(!isPasswordSecure(value)){
         return showError("your password must be at least 8 digits and contains at least one: lowercase character, uppercase character, number,and  special character",input);
     }else{
         valid = true;
@@ -113,7 +127,7 @@ const checkPasswordConfrim = (password , input,value)=>{
     if(!isRequired(value)){
         return showError("You Must Provide a password",input);
     }
-    if(password !== input){
+    if(password !== value){
         return showError("Confirm password does not match",input);
     }else{
         valid = true;
@@ -121,6 +135,62 @@ const checkPasswordConfrim = (password , input,value)=>{
     } 
     return valid;
 }
+
+const form = document.querySelector('#form');
+form.addEventListener('submit',(e)=>{
+    e.preventDefault()
+
+    const firstName = document.querySelector('#firstName');
+    const secondName = document.querySelector('#lastName');
+    const email = document.querySelector('#email');
+    const phone = document.querySelector('#phone');
+    const country = document.querySelector('#country');
+    const zipCode = document.querySelector('#zipCode');
+    const password = document.querySelector('#user_password');
+    const confrimPassword = document.querySelector('#confirm_password');
+
+    let valid = checkUserName(firstName,firstName.value) && checkUserName(secondName,secondName.value) && checkEmail(email,email.value) && checkPhone(phone,phone.value)  &&  checkCountry(country,country.value) && checkZipCode(zipCode,zipCode.value) && checkPassword(password,password.value) && checkPasswordConfrim(password.value,confrimPassword,confrimPassword.value) ;
+    if (valid){
+        alert('you can submit now')
+    }
+})
+
+form.addEventListener('input',(e)=>{
+    const firstName = document.querySelector('#firstName');
+    const secondName = document.querySelector('#lastName');
+    const email = document.querySelector('#email');
+    const phone = document.querySelector('#phone');
+    const country = document.querySelector('#country');
+    const zipCode = document.querySelector('#zipCode');
+    const password = document.querySelector('#user_password');
+    const confrimPassword = document.querySelector('#confirm_password');
+
+    if(e.target.id === 'firstName'){
+        checkUserName(firstName,firstName.value);
+    }
+    else if (e.target.id === 'lastName'){
+        checkUserName(secondName,secondName.value);
+    }
+    else if(e.target.id === "email"){
+        checkEmail(email,email.value);
+    }
+    else if(e.target.id === 'phone'){
+        checkPhone(phone,phone.value);
+    }
+    else if(e.target.id === 'country'){
+        checkCountry(country,country.value);
+    }
+    else if(e.target.id === 'zipCode'){
+        checkZipCode(zipCode,zipCode.value);
+    }
+    else if(e.target.id === 'user_password'){
+        checkPassword(password,password.value);
+    }
+    else if(e.target.id === 'confirm_password'){
+        checkPasswordConfrim(password.value, confrimPassword,confrimPassword.value);
+    }
+})
+
 
 
 
